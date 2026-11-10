@@ -2,6 +2,10 @@
 
 [简体中文](README.md) · [English](README.en.md) · [下载 Downloads](https://github.com/bohuis686-creator/AstralCodex/releases) · [参与贡献 Contribute](CONTRIBUTING.md)
 
+[![桌面启动实录](demo/launch-demo.gif)](demo/launch-demo.mp4)
+
+点击上方动图观看完整有声录屏。动图节选桌面点击、人物动画到 Codex 窗口交接的过程，完整视频保存在独立的 [演示目录](demo/README.md)。
+
 欢迎一起开发！星澜为 Windows Codex 制作二次元动态开场，也希望与社区一起将“播放动画、等待软件就绪、衔接真实窗口”的思路扩展到更多桌面软件。
 
 当前预览版已实现 Codex MSIX 启动和窗口交接。普通 Win32 EXE、多软件配置与主题系统是欢迎贡献的后续方向。你可以贡献代码、动画主题、翻译、测试报告和设计建议。

@@ -2,6 +2,10 @@
 
 [English](README.en.md) · [简体中文](README.md) · [Downloads](https://github.com/bohuis686-creator/AstralCodex/releases) · [Contributing](CONTRIBUTING.md)
 
+[![Desktop launch recording](demo/launch-demo.gif)](demo/launch-demo.mp4)
+
+Click the animation for the full recording with audio. The looping preview shows the desktop launch, character animation and handoff to Codex. Full media and details are in the [demo directory](demo/README.md).
+
 An anime startup animation for the Windows Codex desktop client. Help us extend the same animation-to-window experience to more desktop applications. Contributions in code, animation, translation, testing and design are welcome.
 
 ![Character concept](media/scene.png)
