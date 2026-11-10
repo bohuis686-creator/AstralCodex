@@ -70,9 +70,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build.ps1
 
 构建时执行配置、素材存在性、转场范围与多种屏幕比例的几何自测。EXE 的 `--snapshot` 参数仅导出旧版插画模式的静态图。动态效果请运行 `Preview.cmd` 查看。`last-run.json` 记录最近一次真实启动的视频打开、位置及窗口交接结果。
 
-## 发布到 GitHub
+## 使用方式
 
-源码目录可直接上传到新仓库，`build/` 已加入忽略规则。可将 `build/AstralCodex` 文件夹打成 ZIP，作为 GitHub Release 附件提供。使用者需要完整解压文件夹后运行 EXE。
+使用者需要完整解压文件夹后运行 EXE。
 
 ## 许可
 
