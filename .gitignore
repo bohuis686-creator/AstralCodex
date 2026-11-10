@@ -1,0 +1,11 @@
+/build/
+/dist/
+error.txt
+self-test.json
+preview.png
+*.log
+last-run.json
+
+.integration/
+*.backup-*
+.env*

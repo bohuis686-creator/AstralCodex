@@ -1,0 +1,15 @@
+{
+  "AppLaunch": "shell:AppsFolder\\OpenAI.Codex_2p2nqsd0c76g0!App",
+  "ProcessPathContains": "OpenAI.Codex_",
+  "ProcessNames": [
+    "Codex",
+    "ChatGPT"
+  ],
+  "Volume": 0.3,
+  "IntroSeconds": 5.0,
+  "TransitionSeconds": 1.8,
+  "MaxWaitSeconds": 60,
+  "VideoHoldAt": 7.5,
+  "VideoTransitionStart": 8.25,
+  "VideoTransitionEnd": 9.9
+}
