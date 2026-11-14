@@ -14,19 +14,22 @@ The included 1080p video shows an original silver-haired character opening her e
 
 ## Try it
 
-Download `AstralCodex-Windows.zip` from Releases and extract the entire archive to a permanent folder. Run `Preview.cmd` to preview the animation or `AstralCodex.exe` to launch Codex. Press Esc to skip.
+Requirements first: 64-bit Windows 10 or 11, and the Codex desktop client installed from the Microsoft Store (the launcher activates Codex through its Store identity, so a plain EXE install is not recognized yet). The .NET Framework 4.x WPF runtime and media components ship with Windows 10/11 by default; there is nothing else to install.
 
-Run `Install-Desktop.cmd` from the extracted runtime folder to retarget existing desktop shortcuts for the configured Codex client. It preserves their icons and backs up the originals. `Restore-Desktop.cmd` restores them. Keep the `.integration` backup folder and the runtime folder in place after installation.
-
-Requires 64-bit Windows 10/11, .NET Framework 4.x/WPF, Windows media components and an installed Codex desktop client.
+1. Download `AstralCodex-Windows.zip` from the [latest release](https://github.com/bohuis686-creator/AstralCodex/releases/latest) and extract the whole archive into a folder you will keep in place (for example `%USERPROFILE%\AstralCodex`). `Install-Desktop.cmd` retargets shortcuts into this folder, so moving or deleting it later breaks those shortcuts.
+2. In that folder, run `Preview.cmd` to watch the animation without launching Codex. It plays once and closes itself shortly after the video ends; the `MaxWaitSeconds` value in `launcher.json` (default 60 seconds) is only a safety timeout. Press Esc to skip earlier.
+3. Run `AstralCodex.exe` to play the animation and then hand off to Codex. If Codex is not installed, the launcher shows a message and closes. If Codex launches but its window never appears or becomes stable, the video holds at the transition and the launcher closes after `MaxWaitSeconds` (default 60 seconds) with a timeout message. Until the UI is localized, status and error messages render in Simplified Chinese.
+4. Optional: run `Install-Desktop.cmd` from the same folder to retarget your existing desktop shortcuts for Codex to this launcher. It keeps each shortcut's icon, backs up the originals in the `.integration` backup folder, and changes nothing when no matching shortcut exists. `Restore-Desktop.cmd` puts the originals back. Keep the runtime folder and its `.integration` folder in place after installation.
 
 ## Build
 
-Run `Build.cmd`, or run this command from the source root.
+Run `Build.cmd`, or run this command from the repository root.
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\scripts\build.ps1
 ```
+
+No SDK, project system or restore step is needed: `build.ps1` compiles the two `source/*.cs` files with the `csc.exe` that ships inside `%WINDIR%\Microsoft.NET\Framework64\v4.0.30319` on Windows 10/11, so a stock system is enough. One obsolete-API warning (`CS0618`, `FormattedText`) during compilation is expected. The build ends with a headless self-test that prints a JSON status line (`ok`, `configuration`, `assets`, `geometry`).
 
 Output goes to `build/AstralCodex`. Builds preserve an existing runtime `launcher.json` and refresh bundled media. The script runs configuration, asset and transition geometry checks. CI performs the same build on Windows.
 
